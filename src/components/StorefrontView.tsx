@@ -3,6 +3,8 @@ import { ShoppingCart, Star, Heart, ArrowRight, CheckCircle2, Shield, Zap, Spark
 import { BrazeBanner } from './BrazeBanner';
 import { brazeService } from '../services/brazeService';
 import type { CurrentUserAttributes } from '../types/braze';
+import heroBannerImg from '../assets/images/hero_banner_sample_1790175656900.jpg';
+import appIconImg from '../assets/images/braze_app_icon_1790175642898.jpg';
 
 interface StorefrontViewProps {
   currentUser: CurrentUserAttributes;
@@ -19,7 +21,7 @@ const PRODUCTS = [
     rating: 4.9,
     reviews: 142,
     badge: 'Popular',
-    image: '/src/assets/images/hero_banner_sample_1790175656900.jpg',
+    image: heroBannerImg,
     description: 'Precision 5K retina panel with nano-texture glass and calibrated color profiles for designers.',
   },
   {
@@ -30,7 +32,7 @@ const PRODUCTS = [
     rating: 4.8,
     reviews: 89,
     badge: 'New',
-    image: '/src/assets/images/braze_app_icon_1790175642898.jpg',
+    image: appIconImg,
     description: 'Aircraft-grade anodized aluminum chassis with custom lubricated switches and hot-swap sockets.',
   },
   {
@@ -41,7 +43,7 @@ const PRODUCTS = [
     rating: 4.7,
     reviews: 210,
     badge: null,
-    image: '/src/assets/images/hero_banner_sample_1790175656900.jpg',
+    image: heroBannerImg,
     description: 'High-density organic felted wool surface with non-slip natural rubber backing for ultra-smooth glide.',
   },
 ];
@@ -100,7 +102,7 @@ export const StorefrontView: React.FC<StorefrontViewProps> = ({
       <section className="relative overflow-hidden rounded-2xl bg-slate-900 text-white p-8 md:p-12 shadow-xl border border-slate-800">
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent z-10" />
         <img
-          src="/src/assets/images/hero_banner_sample_1790175656900.jpg"
+          src={heroBannerImg}
           alt="Modern Workstation Hero"
           className="absolute inset-0 w-full h-full object-cover object-center opacity-35"
         />

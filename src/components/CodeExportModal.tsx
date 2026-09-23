@@ -145,17 +145,18 @@ export const CodeExportModal: React.FC<CodeExportModalProps> = ({
     setTimeout(() => setCopiedKey(null), 2000);
   };
 
-  const gitCommands = `# 1. Initialize local git repository
-git init
+  const gitCommands = `# --- FIX FOR BLANK SCREEN ON GITHUB PAGES ---
+# 1. Base URL is configured to './' in vite.config.ts so assets load properly under /Basic-Braze-App/
+
+# OPTION A: Deploy via GitHub Actions (Recommended)
 git add .
-git commit -m "feat: integrate Braze Web SDK 6.13.0 with dynamic banners placement: ${placementId}"
+git commit -m "fix: set base to './' for GitHub Pages compatibility and add deploy workflow"
+git push origin main
+# Then in GitHub: Repo Settings -> Pages -> Source: select "GitHub Actions"!
 
-# 2. Add your GitHub remote repository
-git branch -M main
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/braze-web-website.git
-
-# 3. Push code to GitHub
-git push -u origin main
+# OPTION B: Deploy directly using gh-pages branch
+npm run deploy
+# Then in GitHub: Repo Settings -> Pages -> Source: select "Deploy from a branch" -> branch: "gh-pages" -> folder: "/ (root)"
 `;
 
   return (

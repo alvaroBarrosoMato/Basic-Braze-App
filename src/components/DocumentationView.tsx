@@ -169,12 +169,15 @@ export const DocumentationView: React.FC<DocumentationViewProps> = ({
         </div>
 
         <pre className="p-4 bg-slate-950 rounded-xl border border-slate-800 text-xs font-mono text-slate-300 overflow-x-auto whitespace-pre leading-relaxed">
-{`git init
+{`# 1. Push to GitHub with the updated base: './' and GitHub Actions workflow
 git add .
-git commit -m "feat: complete Braze Web SDK integration with dynamic placement my_first_banner"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/braze-web-website.git
-git push -u origin main`}
+git commit -m "fix: add base './' and GitHub Actions workflow for GitHub Pages"
+git push origin main
+
+# 2. In your GitHub repo:
+# Go to Settings > Pages
+# Under "Build and deployment" > "Source", select "GitHub Actions"
+# The workflow will automatically build and publish to https://alvarobarrosomato.github.io/Basic-Braze-App/!`}
         </pre>
       </section>
     </div>
