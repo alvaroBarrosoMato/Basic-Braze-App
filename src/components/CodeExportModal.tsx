@@ -145,18 +145,20 @@ export const CodeExportModal: React.FC<CodeExportModalProps> = ({
     setTimeout(() => setCopiedKey(null), 2000);
   };
 
-  const gitCommands = `# --- FIX FOR BLANK SCREEN ON GITHUB PAGES ---
-# 1. Base URL is configured to './' in vite.config.ts so assets load properly under /Basic-Braze-App/
-
-# OPTION A: Deploy via GitHub Actions (Recommended)
-git add .
-git commit -m "fix: set base to './' for GitHub Pages compatibility and add deploy workflow"
-git push origin main
-# Then in GitHub: Repo Settings -> Pages -> Source: select "GitHub Actions"!
-
-# OPTION B: Deploy directly using gh-pages branch
-npm run deploy
-# Then in GitHub: Repo Settings -> Pages -> Source: select "Deploy from a branch" -> branch: "gh-pages" -> folder: "/ (root)"
+  const gitCommands = `# === ZERO-CONSOLE DEPLOY FROM BRANCH (GITHUB WEB UI) ===
+# We generated the production bundle inside the '/docs' directory with '.nojekyll' and relative paths.
+#
+# Follow these 3 simple clicks in GitHub (NO CONSOLE NEEDED):
+# 1. Open your GitHub repo: https://github.com/alvaroBarrosoMato/Basic-Braze-App
+# 2. Click "Settings" (top menu) -> Click "Pages" (left sidebar)
+# 3. Under "Build and deployment":
+#      - Source: Select "Deploy from a branch"
+#      - Branch: Select "main"
+#      - Folder: Select "/docs" (IMPORTANT: change from "/ (root)" to "/docs")
+#      - Click "Save"
+#
+# GitHub Pages will immediately publish the pre-compiled app from /docs!
+# Your site will open live at: https://alvarobarrosomato.github.io/Basic-Braze-App/
 `;
 
   return (
