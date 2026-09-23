@@ -1,0 +1,6 @@
+{
+  "name": "Braze Web SDK Portal - Website",
+  "description": "Production-ready Web frontend integrating the Braze Web SDK with dynamic Banners (placement ID: my_first_banner), Content Cards, In-App Messages, user attribution, and live telemetry inspector.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
